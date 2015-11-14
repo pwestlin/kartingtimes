@@ -19,6 +19,17 @@
         <!--<version>Brixton.M2</version>-->
     </parent>
 
+    <dependencies>
+
+        <dependency>
+            <!-- Eureka service registration -->
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+        </dependency>
+
+
+    </dependencies>
+
     <repositories>
         <repository>
             <id>spring-milestones</id>
