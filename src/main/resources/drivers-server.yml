@@ -25,3 +25,4 @@ server:
 
 
 
+spring.jackson.serialization.INDENT_OUTPUT: true

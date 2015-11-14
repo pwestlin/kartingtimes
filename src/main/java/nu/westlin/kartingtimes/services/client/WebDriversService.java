@@ -43,4 +43,16 @@ public class WebDriversService {
             return null;
         }
     }
+
+    public List<Driver> findByFirstName(String firstName) {
+        Driver[] drivers = null;
+
+        drivers = restTemplate.getForObject(serviceUrl + "/drivers/firstName/{firstName}", Driver[].class, firstName);
+
+        if (drivers != null && drivers.length > 0) {
+            return Arrays.asList(drivers);
+        } else {
+            return null;
+        }
+    }
 }

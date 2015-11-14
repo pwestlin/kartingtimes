@@ -5,6 +5,8 @@ eureka:
   client:  # Not a client, don't register with yourself
     registerWithEureka: false
     fetchRegistry: false
+  numberRegistrySyncRetries: 0
+
 
 server:
   port: 1111   # HTTP (Tomcat) port
@@ -12,4 +14,6 @@ server:
 # Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf templates
 spring:
   thymeleaf:
-    enabled: false     # Disable Thymeleaf 
+    enabled: false     # Disable Thymeleaf
+
+spring.jackson.serialization.INDENT_OUTPUT: true

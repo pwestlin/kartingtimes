@@ -24,4 +24,4 @@ eureka:
 server:
   port: 3333   # HTTP (Tomcat) port
 
-http.mappers.jsonPrettyPrint: true
+spring.jackson.serialization.INDENT_OUTPUT: true

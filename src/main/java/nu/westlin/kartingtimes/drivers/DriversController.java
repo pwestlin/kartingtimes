@@ -1,6 +1,7 @@
 package nu.westlin.kartingtimes.drivers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +35,7 @@ public class DriversController {
      * @return The account if found.
      * @throws AccountNotFoundException If the number is not recognised.
      */
-    @RequestMapping("/drivers/{id}")
+    @RequestMapping(value = "/drivers/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Driver byId(@PathVariable("id") long id) {
 
         logger.info("drivers-service byId() invoked: " + id);
@@ -48,17 +49,17 @@ public class DriversController {
         }
     }
 
-    @RequestMapping("/driver")
+    @RequestMapping(value = "/driver", produces = MediaType.APPLICATION_JSON_VALUE)
     public Driver driver() {
-        return new Driver("Peter", "Westlin");
+        return new Driver(1L, "Peter", "Westlin");
     }
 
-    @RequestMapping("/drivers")
+    @RequestMapping(value = "/drivers", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Driver> drivers() {
         return driverRepository.findAll();
     }
 
-    @RequestMapping("/drivers/firstName/{firstName}")
+    @RequestMapping(value = "/drivers/firstName/{firstName}", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Driver> byFirstName(@PathVariable("firstName") String firstName) {
         logger.info("drivers-byFirstName byOwner() invoked");
 

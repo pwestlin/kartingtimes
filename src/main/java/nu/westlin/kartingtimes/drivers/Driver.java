@@ -20,20 +20,14 @@ public class Driver implements Serializable {
 
     protected String surname;
 
-    protected static Long getNextId() {
-        synchronized (nextId) {
-            return nextId++;
-        }
-    }
-
     /**
      * Default constructor for JPA only.
      */
     protected Driver() {
     }
 
-    public Driver(String firstName, String surname) {
-        id = getNextId();
+    public Driver(long id, String firstName, String surname) {
+        this.id = id;
         this.firstName = firstName;
         this.surname = surname;
     }
