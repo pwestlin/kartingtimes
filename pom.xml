@@ -19,11 +19,6 @@
         <!--<version>Brixton.M2</version>-->
     </parent>
 
-    <properties>
-        <!-- Standalone RESTful application for testing -->
-        <start-class>nu.westlin.kartingtimes.services.Main</start-class>
-    </properties>
-
     <repositories>
         <repository>
             <id>spring-milestones</id>
@@ -35,19 +30,4 @@
         </repository>
     </repositories>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>

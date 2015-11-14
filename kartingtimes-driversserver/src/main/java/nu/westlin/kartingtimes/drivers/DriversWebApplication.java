@@ -1,6 +1,5 @@
 package nu.westlin.kartingtimes.drivers;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.Bean;
@@ -28,9 +27,11 @@ public class DriversWebApplication {
      *
      * @param args Program arguments - ignored.
      */
+/*
     public static void main(String[] args) {
         SpringApplication.run(DriversWebApplication.class, args);
     }
+*/
 
     /**
      * Creates an in-memory "rewards" database populated with test data for fast

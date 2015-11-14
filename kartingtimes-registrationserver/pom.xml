@@ -16,68 +16,30 @@
     <packaging>jar</packaging>
 
     <dependencies>
+
         <dependency>
             <!-- Eureka service registration -->
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
         </dependency>
 
-        <!--
-                <dependency>
-                    &lt;!&ndash; Setup Spring Boot &ndash;&gt;
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter</artifactId>
-                </dependency>
-
-                <dependency>
-                    &lt;!&ndash; Setup Spring MVC & REST, use Embedded Tomcat &ndash;&gt;
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-web</artifactId>
-                </dependency>
-
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-thymeleaf</artifactId>
-                </dependency>
-
-                <dependency>
-                    &lt;!&ndash; Setup Spring Data common components &ndash;&gt;
-                    <groupId>org.springframework.data</groupId>
-                    <artifactId>spring-data-commons</artifactId>
-                </dependency>
-
-                <dependency>
-                    &lt;!&ndash; Testing starter &ndash;&gt;
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-test</artifactId>
-                </dependency>
-
-                <dependency>
-                    &lt;!&ndash; Setup Spring Data JPA Repository support &ndash;&gt;
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-data-jpa</artifactId>
-                </dependency>
-
-                <dependency>
-                    &lt;!&ndash; In-memory database for testing/demos &ndash;&gt;
-                    <groupId>org.hsqldb</groupId>
-                    <artifactId>hsqldb</artifactId>
-                </dependency>
-
-                <dependency>
-                    &lt;!&ndash; Spring Cloud starter &ndash;&gt;
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-starter</artifactId>
-                </dependency>
-
-                <dependency>
-                    <groupId>com.google.guava</groupId>
-                    <artifactId>guava</artifactId>
-                    <version>19.0-rc2</version>
-                </dependency>
-        -->
-
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
