@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.drivers;
+package nu.westlin.kartingtimes.tracks;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.orm.jpa.EntityScan;
@@ -14,12 +14,12 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 @SpringBootApplication
-@EntityScan("nu.westlin.kartingtimes.drivers")
-@EnableJpaRepositories("nu.westlin.kartingtimes.drivers")
+@EntityScan("nu.westlin.kartingtimes.tracks")
+@EnableJpaRepositories("nu.westlin.kartingtimes.tracks")
 @PropertySource("classpath:db-config.properties")
-public class DriversWebApplication {
+public class TracksWebApplication {
 
-    protected Logger logger = Logger.getLogger(DriversWebApplication.class
+    protected Logger logger = Logger.getLogger(TracksWebApplication.class
         .getName());
 
     /**
@@ -42,7 +42,7 @@ public class DriversWebApplication {
         logger.info("dataSource() invoked");
 
         // Create an in-memory H2 relational database containing some demo
-        // accounts.
+        // tracks.
         DataSource dataSource = (new EmbeddedDatabaseBuilder())
             .addScript("classpath:testdb/schema.sql")
             .addScript("classpath:testdb/data.sql").build();
@@ -51,9 +51,9 @@ public class DriversWebApplication {
 
         // Sanity check
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-        List<Map<String, Object>> accounts = jdbcTemplate
-            .queryForList("SELECT number FROM T_DRIVER");
-        logger.info("System has " + accounts.size() + " drivers");
+        List<Map<String, Object>> tracks = jdbcTemplate
+            .queryForList("SELECT ID FROM T_TRACK");
+        logger.info("System has " + tracks.size() + " tracks");
 
         return dataSource;
     }

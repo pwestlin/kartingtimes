@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.drivers;
+package nu.westlin.kartingtimes.tracks;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,8 +10,6 @@ import java.io.Serializable;
 public class Driver implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    public static Long nextId = 0L;
 
     @Id
     protected Long id;

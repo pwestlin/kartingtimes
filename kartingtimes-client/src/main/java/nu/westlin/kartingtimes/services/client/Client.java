@@ -1,5 +1,6 @@
 package nu.westlin.kartingtimes.services.client;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -21,7 +22,8 @@ public class Client {
      * URL uses the logical name of account-service - upper or lower case,
      * doesn't matter.
      */
-    public static final String DRIVERS_SERVICE_URL = "http://DRIVERS-SERVICE";
+    @Value("${drivers.service.url}")
+    public String driversServiceUrl;
 
     /**
      * Run the application using Spring Boot and an embedded servlet engine.
@@ -48,7 +50,7 @@ public class Client {
      */
     @Bean
     public WebDriversService accountsService() {
-        return new WebDriversService(DRIVERS_SERVICE_URL);
+        return new WebDriversService(driversServiceUrl);
     }
 
     @Bean

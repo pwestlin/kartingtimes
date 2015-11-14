@@ -8,7 +8,11 @@
 
     <modules>
         <module>kartingtimes-registrationserver</module>
+
         <module>kartingtimes-driversserver</module>
+        <module>kartingtimes-trackserver</module>
+        <module>kartingtimes-laptimesserver</module>
+
         <module>kartingtimes-client</module>
     </modules>
 

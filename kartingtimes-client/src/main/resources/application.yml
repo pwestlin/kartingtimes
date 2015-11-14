@@ -20,8 +20,9 @@ eureka:
       defaultZone: http://localhost:1111/eureka/
 
 # HTTP Server
-# TODO petves: Behövs denna?
 server:
-  port: 3333   # HTTP (Tomcat) port
+  port: 9999   # HTTP (Tomcat) port
 
 spring.jackson.serialization.INDENT_OUTPUT: true
+
+drivers.service.url: http://DRIVERS-SERVICE

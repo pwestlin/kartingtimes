@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.drivers;
+package nu.westlin.kartingtimes.tracks;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
@@ -6,9 +6,6 @@ import org.springframework.data.repository.Repository;
 import java.util.List;
 
 public interface DriverRepository extends Repository<Driver, Long> {
-
-    // TODO petves: Implementera
-    //public Driver findByName(String firstName, String surname);
 
     Driver findById(long id);
 

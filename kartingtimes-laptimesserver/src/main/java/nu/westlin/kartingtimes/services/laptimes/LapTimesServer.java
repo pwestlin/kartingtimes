@@ -1,6 +1,6 @@
-package nu.westlin.kartingtimes.services.drivers;
+package nu.westlin.kartingtimes.services.laptimes;
 
-import nu.westlin.kartingtimes.tracks.DriversWebApplication;
+import nu.westlin.kartingtimes.laptimes.LapTimesWebApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -10,10 +10,10 @@ import java.util.logging.Logger;
 
 @EnableAutoConfiguration
 @EnableDiscoveryClient
-@Import(DriversWebApplication.class)
-public class DriversServer {
+@Import(LapTimesWebApplication.class)
+public class LapTimesServer {
 
-    protected Logger logger = Logger.getLogger(DriversServer.class.getName());
+    protected Logger logger = Logger.getLogger(LapTimesServer.class.getName());
 
     /**
      * Run the application using Spring Boot and an embedded servlet engine.
@@ -21,6 +21,6 @@ public class DriversServer {
      * @param args Program arguments - ignored.
      */
     public static void main(String[] args) {
-        SpringApplication.run(DriversServer.class, args);
+        SpringApplication.run(LapTimesServer.class, args);
     }
 }

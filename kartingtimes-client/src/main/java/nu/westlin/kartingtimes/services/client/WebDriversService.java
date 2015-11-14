@@ -20,6 +20,8 @@ public class WebDriversService {
     public WebDriversService(String serviceUrl) {
         this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl
             : "http://" + serviceUrl;
+
+        this.logger.info("serviceUrl = " + serviceUrl);
     }
 
     public Driver getDriver(Long id) {
