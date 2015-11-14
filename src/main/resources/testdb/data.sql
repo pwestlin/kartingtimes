@@ -1,3 +1,3 @@
-
-insert into T_DRIVER (NUMBER, FIRST_NAME, SURNAME) values ('111', 'Peter', 'Westlin');
-insert into T_DRIVER (NUMBER, FIRST_NAME, SURNAME) values ('222', 'David', 'Coulthard');
+INSERT INTO T_DRIVER (NUMBER, FIRST_NAME, SURNAME) VALUES (111, 'Peter', 'Westlin');
+INSERT INTO T_DRIVER (NUMBER, FIRST_NAME, SURNAME) VALUES (222, 'David', 'Coulthard');
+INSERT INTO T_DRIVER (NUMBER, FIRST_NAME, SURNAME) VALUES (333, 'Peter', 'Popovic');

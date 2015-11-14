@@ -18,7 +18,6 @@ public class Driver implements Serializable {
 
     protected String firstName;
 
-    //@Column(name = "name")
     protected String surname;
 
     protected static Long getNextId() {

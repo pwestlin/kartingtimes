@@ -1,7 +1,6 @@
 package nu.westlin.kartingtimes.services.drivers;
 
-import nu.westlin.kartingtimes.drivers.DriverRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import nu.westlin.kartingtimes.drivers.DriversWebApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -13,9 +12,6 @@ import java.util.logging.Logger;
 @EnableDiscoveryClient
 @Import(DriversWebApplication.class)
 public class DriversServer {
-
-    @Autowired
-    protected DriverRepository driverRepository;
 
     protected Logger logger = Logger.getLogger(DriversServer.class.getName());
 
