@@ -1,6 +1,5 @@
 package nu.westlin.kartingtimes.services.client;
 
-import nu.westlin.kartingtimes.drivers.DriverNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -23,7 +23,7 @@ public class DriversServer {
     public static void main(String[] args) {
         // Tell server to look for accounts-server.properties or
         // accounts-server.yml
-        System.setProperty("spring.config.name", "drivers-server");
+        //System.setProperty("spring.config.name", "drivers-server");
 
         SpringApplication.run(DriversServer.class, args);
     }

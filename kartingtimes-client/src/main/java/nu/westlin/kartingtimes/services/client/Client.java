@@ -30,7 +30,7 @@ public class Client {
      */
     public static void main(String[] args) {
         // Tell server to look for web-server.properties or web-server.yml
-        System.setProperty("spring.config.name", "client");
+        //System.setProperty("spring.config.name", "client");
         ConfigurableApplicationContext ctx = SpringApplication.run(Client.class, args);
 /*
         WebDriversService driversService = ctx.getBean(WebDriversService.class);
