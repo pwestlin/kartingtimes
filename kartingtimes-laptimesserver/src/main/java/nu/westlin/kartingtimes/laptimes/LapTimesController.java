@@ -42,8 +42,23 @@ public class LapTimesController {
         }
     }
 
+    @RequestMapping(value = "/laptime/driver/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<LapTime> lapTimesByDriver(@PathVariable("id") long driverId) {
+        return lapTimesRepository.findByDriverId(driverId);
+    }
+
+    @RequestMapping(value = "/laptime/track/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<LapTime> lapTimesByTrack(@PathVariable("id") long trackId) {
+        return lapTimesRepository.findByTrackId(trackId);
+    }
+
+    @RequestMapping(value = "/laptime/driver/{driverId}/track/{trackId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<LapTime> lapTimesByDriverAndTrack(@PathVariable("driverId") long driverId, @PathVariable("trackId") long trackId) {
+        return lapTimesRepository.findByDriverIdAndTrackId(driverId, trackId);
+    }
+
     @RequestMapping(value = "/laptimes", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<LapTime> tracks() {
+    public List<LapTime> laptimes() {
         return lapTimesRepository.findAll();
     }
 }

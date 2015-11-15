@@ -1,23 +1,26 @@
 package nu.westlin.kartingtimes.services.client;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
+import javax.inject.Inject;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class WebDriversService {
+@Repository
+public class DriverRepository {
 
-    protected Logger logger = Logger.getLogger(WebDriversService.class.getName());
+    protected Logger logger = Logger.getLogger(DriverRepository.class.getName());
 
     private final String serviceUrl;
 
-    //@LoadBalanced
-    @Autowired
     protected RestTemplate restTemplate;
 
-    public WebDriversService(String serviceUrl) {
+    @Inject
+    public DriverRepository(RestTemplate restTemplate, @Value("${drivers.service.url}") String serviceUrl) {
+        this.restTemplate = restTemplate;
         this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl
             : "http://" + serviceUrl;
 

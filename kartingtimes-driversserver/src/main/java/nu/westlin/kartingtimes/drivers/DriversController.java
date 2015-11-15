@@ -28,13 +28,6 @@ public class DriversController {
             + driverRepository.countDrivers() + " drivers");
     }
 
-    /**
-     * Fetch an account with the specified account number.
-     *
-     * @param accountNumber A numeric, 9 digit account number.
-     * @return The account if found.
-     * @throws AccountNotFoundException If the number is not recognised.
-     */
     @RequestMapping(value = "/drivers/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Driver byId(@PathVariable("id") long id) {
 

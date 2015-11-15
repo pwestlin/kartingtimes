@@ -26,3 +26,5 @@ server:
 spring.jackson.serialization.INDENT_OUTPUT: true
 
 drivers.service.url: http://DRIVERS-SERVICE
+tracks.service.url: http://TRACKS-SERVICE
+laptimes.service.url: http://LAPTIMES-SERVICE

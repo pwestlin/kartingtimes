@@ -1,19 +1,16 @@
 package nu.westlin.kartingtimes.services.client;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 import java.util.logging.Logger;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-// Disable component scan
-@ComponentScan(useDefaultFilters = false)
+@ComponentScan(basePackages = "nu.westlin.kartingtimes.services.client")
 public class Client {
 
     protected static final Logger logger = Logger.getLogger(Client.class.getName());
@@ -22,8 +19,10 @@ public class Client {
      * URL uses the logical name of account-service - upper or lower case,
      * doesn't matter.
      */
+/*
     @Value("${drivers.service.url}")
     public String driversServiceUrl;
+*/
 
     /**
      * Run the application using Spring Boot and an embedded servlet engine.
@@ -48,14 +47,16 @@ public class Client {
      *
      * @return A new service instance.
      */
+/*
     @Bean
-    public WebDriversService driversService() {
-        return new WebDriversService(driversServiceUrl);
+    public DriverRepository driversService() {
+        return new DriverRepository(driversServiceUrl);
     }
 
     @Bean
-    public WebDriversController driversController() {
-        return new WebDriversController(driversService());
+    public ClientController driversController() {
+        return new ClientController(driversService());
     }
+*/
 
 }

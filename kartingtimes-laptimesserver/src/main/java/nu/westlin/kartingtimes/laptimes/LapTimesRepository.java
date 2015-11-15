@@ -12,4 +12,10 @@ public interface LapTimesRepository extends Repository<LapTime, Long> {
     List<LapTime> findAll();
 
     LapTime findById(long id);
+
+    List<LapTime> findByDriverId(long driverId);
+
+    List<LapTime> findByTrackId(long trackId);
+
+    List<LapTime> findByDriverIdAndTrackId(long driverId, long trackId);
 }
