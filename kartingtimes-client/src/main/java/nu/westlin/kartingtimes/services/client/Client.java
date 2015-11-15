@@ -49,13 +49,13 @@ public class Client {
      * @return A new service instance.
      */
     @Bean
-    public WebDriversService accountsService() {
+    public WebDriversService driversService() {
         return new WebDriversService(driversServiceUrl);
     }
 
     @Bean
     public WebDriversController driversController() {
-        return new WebDriversController(accountsService());
+        return new WebDriversController(driversService());
     }
 
 }

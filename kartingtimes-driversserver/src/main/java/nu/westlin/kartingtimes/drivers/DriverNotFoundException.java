@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.tracks;
+package nu.westlin.kartingtimes.drivers;
 
 public class DriverNotFoundException extends RuntimeException {
 

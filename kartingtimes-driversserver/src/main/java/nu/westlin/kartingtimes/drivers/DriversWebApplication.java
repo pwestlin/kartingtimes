@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.tracks;
+package nu.westlin.kartingtimes.drivers;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.orm.jpa.EntityScan;

@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.tracks;
+package nu.westlin.kartingtimes.drivers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

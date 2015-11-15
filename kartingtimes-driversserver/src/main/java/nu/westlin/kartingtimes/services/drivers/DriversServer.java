@@ -1,6 +1,6 @@
 package nu.westlin.kartingtimes.services.drivers;
 
-import nu.westlin.kartingtimes.tracks.DriversWebApplication;
+import nu.westlin.kartingtimes.drivers.DriversWebApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;

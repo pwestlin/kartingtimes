@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.tracks;
+package nu.westlin.kartingtimes.drivers;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

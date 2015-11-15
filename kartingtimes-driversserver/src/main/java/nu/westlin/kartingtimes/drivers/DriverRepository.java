@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.tracks;
+package nu.westlin.kartingtimes.drivers;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
