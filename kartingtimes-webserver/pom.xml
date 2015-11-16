@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>nu.westlin.kartingtimes</groupId>
-    <artifactId>kartingtimes-client</artifactId>
+    <artifactId>kartingtimes-webserver</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
