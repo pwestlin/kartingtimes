@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>kartingtimes</artifactId>
-        <groupId>nu.westlin.microservices</groupId>
+        <groupId>nu.westlin</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>nu.westlin.microservices.kartingtimes</groupId>
+    <groupId>nu.westlin.kartingtimes</groupId>
     <artifactId>kartingtimes-registrationserver</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
