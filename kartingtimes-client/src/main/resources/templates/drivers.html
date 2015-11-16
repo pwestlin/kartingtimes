@@ -1,0 +1,43 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+<h1>All drivers</h1>
+
+<div th:if="not ${drivers}" class="error">
+    No drivers found
+    <div style="height: 2cm">&nbsp;</div>
+</div>
+
+<div th:if="${drivers}">
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Surname</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="driver : ${drivers}">
+            <td th:text="${driver.firstName}">firstName</td>
+            <td th:text="${driver.surname}">surname</td>
+            <!--
+                        <td><a href="account.html"
+                               th:href="@{|/accounts/${account.number}|}"
+                               th:text="|${account.number}|">11111111</a></td>
+                        <td th:text="${account.owner}">Owner</td>
+                        <td th:text="${account.balance}">0</td>
+            -->
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div th:replace="footer :: copy"></div>
+</body>
+</html>

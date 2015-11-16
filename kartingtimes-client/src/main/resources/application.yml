@@ -4,9 +4,9 @@ spring:
     name: client # Identify this application
   freemarker:
     enabled: false     # Ignore Eureka dashboard FreeMarker templates
-  #thymeleaf:
-    #cache: false       # Allow Thymeleaf templates to be reloaded at runtime
-    #prefix: classpath:/web-server/templates/    # Trailing / mandatory
+  thymeleaf:
+    cache: false       # Allow Thymeleaf templates to be reloaded at runtime
+    prefix: classpath:/templates/    # Trailing / mandatory
                        # Template location for this application only
 
 # Map the error path to error template (for Thymeleaf)
@@ -21,7 +21,7 @@ eureka:
 
 # HTTP Server
 server:
-  port: 9999   # HTTP (Tomcat) port
+  port: 8080   # HTTP (Tomcat) port
 
 spring.jackson.serialization.INDENT_OUTPUT: true
 

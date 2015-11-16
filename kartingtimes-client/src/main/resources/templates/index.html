@@ -1,0 +1,50 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+
+<h1>Microservices - Web Server</h1>
+
+<h3>Overview</h3>
+<ul>
+    <li>Simple application for viewing laptimes for racing.
+    </li>
+    <li>All the all microservices use REST for communication.
+    </li>
+</ul>
+
+<h3>The Demo</h3>
+
+<ul class="openlist">
+    <li>Eureka Dashboard: <a href="http://localhost:1111">http://localhost:1111</a></li>
+    <li>Eurerka registered applications: <a href="http://localhost:1111/eureka/apps/">http://localhost:1111/eureka/apps/</a></li>
+    <li>Drivers server: <a href="http://localhost:2222">http://localhost:2222</a></li>
+    <li>Tracks server: <a href="http://localhost:3333">http://localhost:3333</a></li>
+    <li>Laptimes server: <a href="http://localhost:4444">http://localhost:4444</a></li>
+    <li></li>
+    <li>All drivers: <a th:href="@{/drivers}">/drivers</a></li>
+
+    <!--
+        <li>Fetch by name: <a th:href="@{/accounts/owner/Keri}">/accounts/owner/Keri</a></li>
+
+        <li>Account <a th:href="@{/accounts/search}">Search</a></li>
+    -->
+</ul>
+
+<h3>Spring Boot URL:s for this microservice</h3>
+
+<ul>
+    <li><a th:href="@{/env}">Environment</a></li>
+    <li><a th:href="@{/beans}">Beans</a></li>
+    <li><a th:href="@{/health}">Health</a></li>
+    <li><a th:href="@{/metrics}">Metrics</a></li>
+    <li><a th:href="@{/trace}">Call trace</a></li>
+</ul>
+
+<div th:replace="footer :: copy"></div>
+
+</body>
+</html>
