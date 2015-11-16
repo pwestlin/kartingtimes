@@ -11,9 +11,9 @@ import java.util.logging.Logger;
 @SpringBootApplication
 @EnableDiscoveryClient
 @ComponentScan(basePackages = "nu.westlin.kartingtimes.services.client")
-public class Client {
+public class WebServer {
 
-    protected static final Logger logger = Logger.getLogger(Client.class.getName());
+    protected static final Logger logger = Logger.getLogger(WebServer.class.getName());
 
     /**
      * URL uses the logical name of account-service - upper or lower case,
@@ -30,7 +30,7 @@ public class Client {
      * @param args Program arguments - ignored.
      */
     public static void main(String[] args) {
-        ConfigurableApplicationContext ctx = SpringApplication.run(Client.class, args);
+        ConfigurableApplicationContext ctx = SpringApplication.run(WebServer.class, args);
 /*
         WebDriversService driversService = ctx.getBean(WebDriversService.class);
 

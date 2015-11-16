@@ -1,0 +1,40 @@
+registrationserver:
+  image: kartingtimes-registrationserver
+  net: host
+  ports:
+    - "1111:1111"
+
+driversserver:
+  image: kartingtimes-driversserver
+  net: host
+  ports:
+    - "2222:2222"
+  volumes_from:
+    - registrationserver
+
+trackserver:
+  image: kartingtimes-trackserver
+  net: host
+  ports:
+    - "3333:3333"
+  volumes_from:
+    - registrationserver
+
+laptimesserver:
+  image: kartingtimes-laptimesserver
+  net: host
+  ports:
+    - "4444:4444"
+  volumes_from:
+    - registrationserver
+
+webserver:
+  image: kartingtimes-webserver
+  net: host
+  ports:
+    - "8080:8080"
+  volumes_from:
+    - registrationserver
+    - driversserver
+    - trackserver
+    - laptimesserver
