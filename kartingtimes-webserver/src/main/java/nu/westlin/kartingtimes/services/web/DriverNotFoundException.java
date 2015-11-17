@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.services.client;
+package nu.westlin.kartingtimes.services.web;
 
 public class DriverNotFoundException extends RuntimeException {
 

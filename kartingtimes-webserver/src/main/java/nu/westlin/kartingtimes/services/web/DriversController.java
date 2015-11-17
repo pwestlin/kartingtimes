@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.services.client;
+package nu.westlin.kartingtimes.services.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

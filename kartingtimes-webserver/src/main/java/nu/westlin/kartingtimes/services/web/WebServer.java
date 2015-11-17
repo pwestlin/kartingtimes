@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.services.client;
+package nu.westlin.kartingtimes.services.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan(basePackages = "nu.westlin.kartingtimes.services.client")
+@ComponentScan(basePackages = "nu.westlin.kartingtimes.services.web")
 public class WebServer {
 
     protected static final Logger logger = Logger.getLogger(WebServer.class.getName());

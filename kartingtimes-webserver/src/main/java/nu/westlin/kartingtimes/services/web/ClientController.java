@@ -1,4 +1,4 @@
-package nu.westlin.kartingtimes.services.client;
+package nu.westlin.kartingtimes.services.web;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
