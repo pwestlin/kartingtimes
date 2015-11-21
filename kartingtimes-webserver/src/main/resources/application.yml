@@ -1,7 +1,7 @@
 # Spring properties
 spring:
   application:
-    name: client # Identify this application
+    name: Web Server # Identify this application
   freemarker:
     enabled: false     # Ignore Eureka dashboard FreeMarker templates
   thymeleaf:
@@ -18,6 +18,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
+    initialInstanceInfoReplicationIntervalSeconds: 10
+    registryFetchIntervalSeconds: 10
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 10
 
 # HTTP Server
 server:
@@ -28,3 +33,13 @@ spring.jackson.serialization.INDENT_OUTPUT: true
 drivers.service.url: http://DRIVERS-SERVICE
 tracks.service.url: http://TRACKS-SERVICE
 laptimes.service.url: http://LAPTIMES-SERVICE
+
+---
+
+spring:
+    profiles: docker-linking
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://registrationserver:1111/eureka/

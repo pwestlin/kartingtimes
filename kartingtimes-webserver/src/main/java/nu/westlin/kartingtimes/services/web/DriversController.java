@@ -19,8 +19,8 @@ public class DriversController {
 
     @RequestMapping("/drivers")
     public String drivers(Model model) {
-        List<Driver> accounts = driverRepository.getDrivers();
-        model.addAttribute("drivers", accounts);
+        List<Driver> drivers = driverRepository.getDrivers();
+        model.addAttribute("drivers", drivers);
         return "drivers";
     }
 

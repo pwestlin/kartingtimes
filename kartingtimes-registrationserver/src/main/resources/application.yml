@@ -2,17 +2,19 @@
 eureka:
   server:
     waitTimeInMsWhenSyncEmpty: 0
+    responseCacheUpdateIntervalMs: 10
+    registrySyncRetries: 0    # 0 for development, NOT production!
   instance:
     hostname: localhost
     lease-renewal-interval-in-seconds: 10
     metadata-map:
       instanceId: ${spring.application.name}:${server.port}
+    leaseRenewalIntervalInSeconds: 10
   client:  # Not a client, don't register with yourself
     registerWithEureka: false
     fetchRegistry: false
     instanceInfoReplicationIntervalSeconds: 10
     initialInstanceInfoReplicationIntervalSeconds: 10
-  numberRegistrySyncRetries: 0  # For development, NOT production!
 
 
 server:

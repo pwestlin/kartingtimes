@@ -15,11 +15,6 @@ public class TracksController {
     protected Logger logger = Logger.getLogger(TracksController.class.getName());
     protected TrackRepository trackRepository;
 
-    /**
-     * Create an instance plugging in the respository of Accounts.
-     *
-     * @param trackRepository An account repository implementation.
-     */
     @Autowired
     public TracksController(TrackRepository trackRepository) {
         this.trackRepository = trackRepository;
@@ -56,13 +51,13 @@ public class TracksController {
     public List<Track> byFirstName(@PathVariable("name") String name) {
         logger.info("tracks-byFirstName byOwner() invoked");
 
-        List<Track> accounts = trackRepository.findByName(name);
-        logger.info("tracks-service byFirstName() found: " + accounts);
+        List<Track> tracks = trackRepository.findByName(name);
+        logger.info("tracks-service byFirstName() found: " + tracks);
 
-        if (accounts == null || accounts.size() == 0)
+        if (tracks == null || tracks.size() == 0)
             throw new TrackNotFoundException(name);
         else {
-            return accounts;
+            return tracks;
         }
     }
 }

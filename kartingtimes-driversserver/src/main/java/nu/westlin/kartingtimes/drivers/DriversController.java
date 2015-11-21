@@ -15,11 +15,6 @@ public class DriversController {
     protected Logger logger = Logger.getLogger(DriversController.class.getName());
     protected DriverRepository driverRepository;
 
-    /**
-     * Create an instance plugging in the respository of Accounts.
-     *
-     * @param driverRepository An account repository implementation.
-     */
     @Autowired
     public DriversController(DriverRepository driverRepository) {
         this.driverRepository = driverRepository;
@@ -56,13 +51,13 @@ public class DriversController {
     public List<Driver> byFirstName(@PathVariable("firstName") String firstName) {
         logger.info("drivers-byFirstName byOwner() invoked");
 
-        List<Driver> accounts = driverRepository.findByFirstName(firstName);
-        logger.info("drivers-service byFirstName() found: " + accounts);
+        List<Driver> drivers = driverRepository.findByFirstName(firstName);
+        logger.info("drivers-service byFirstName() found: " + drivers);
 
-        if (accounts == null || accounts.size() == 0)
+        if (drivers == null || drivers.size() == 0)
             throw new DriverNotFoundException(firstName);
         else {
-            return accounts;
+            return drivers;
         }
     }
 }

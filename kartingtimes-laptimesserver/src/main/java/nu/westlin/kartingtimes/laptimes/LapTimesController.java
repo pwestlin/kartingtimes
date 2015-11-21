@@ -15,11 +15,6 @@ public class LapTimesController {
     protected Logger logger = Logger.getLogger(LapTimesController.class.getName());
     protected LapTimesRepository lapTimesRepository;
 
-    /**
-     * Create an instance plugging in the respository of Accounts.
-     *
-     * @param lapTimesRepository An account repository implementation.
-     */
     @Autowired
     public LapTimesController(LapTimesRepository lapTimesRepository) {
         this.lapTimesRepository = lapTimesRepository;
