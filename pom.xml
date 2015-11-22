@@ -19,8 +19,8 @@
     <parent>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-parent</artifactId>
-        <version>Angel.SR3</version>
-        <!--<version>Brixton.M2</version>-->
+        <version>Angel.SR4</version>
+        <!--<version>Brixton.M3</version>-->
     </parent>
 
     <dependencies>
@@ -39,6 +39,14 @@
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
             <url>http://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>http://repo.spring.io/release</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
