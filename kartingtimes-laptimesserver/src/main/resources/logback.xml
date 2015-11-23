@@ -16,7 +16,7 @@ See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-
     </appender>
 
     <!-- Specify logging levels -->
-    <logger name="com.netflix.eureka.InstanceRegistry" level="info"/>
+    <logger name="org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer" level="info"/>
     <logger name="nu.westlin.kartingtimes" level="debug"/>
 
     <root level="warn">

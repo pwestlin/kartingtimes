@@ -10,11 +10,11 @@ public class KartingTimesService {
 
     protected DriverRepository driverRepository;
     protected TrackRepository trackRepository;
-    protected LapTimeRepository lapTimeRepository;
+    protected LaptimesRepository lapTimeRepository;
 
     @Inject
     public KartingTimesService(DriverRepository driverRepository, TrackRepository trackRepository,
-                               LapTimeRepository lapTimeRepository) {
+                               LaptimesRepository lapTimeRepository) {
         this.driverRepository = driverRepository;
         this.trackRepository = trackRepository;
         this.lapTimeRepository = lapTimeRepository;

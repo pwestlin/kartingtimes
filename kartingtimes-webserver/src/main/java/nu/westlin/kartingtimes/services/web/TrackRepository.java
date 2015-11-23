@@ -1,45 +1,18 @@
 package nu.westlin.kartingtimes.services.web;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Repository;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.inject.Inject;
-import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Logger;
 
-@Repository
-public class TrackRepository {
+import static nu.westlin.kartingtimes.services.web.Services.TRACKS_SERVICE;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-    protected Logger logger = Logger.getLogger(TrackRepository.class.getName());
+@FeignClient(TRACKS_SERVICE)
+public interface TrackRepository {
 
-    private final String serviceUrl;
+    @RequestMapping(value = "/tracks", method = GET) List<Track> getTracks();
 
-    protected RestTemplate restTemplate;
-
-    @Inject
-    public TrackRepository(RestTemplate restTemplate, @Value("${tracks.service.url}") String serviceUrl) {
-        this.restTemplate = restTemplate;
-        this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl
-            : "http://" + serviceUrl;
-
-        this.logger.info("serviceUrl = " + serviceUrl);
-    }
-
-    public List<Track> getTracks() {
-        Track[] tracks = null;
-
-        tracks = restTemplate.getForObject(serviceUrl + "/tracks", Track[].class);
-
-        if (tracks != null && tracks.length > 0) {
-            return Arrays.asList(tracks);
-        } else {
-            return null;
-        }
-    }
-
-    public Track getTrack(Long id) {
-        return restTemplate.getForObject(serviceUrl + "/tracks/{id}", Track.class, id);
-    }
+    @RequestMapping(value = "/tracks/{id}", method = GET) Track getTrack(@PathVariable("id") Long trackId);
 }

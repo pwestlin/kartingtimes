@@ -3,11 +3,13 @@ package nu.westlin.kartingtimes.services.web;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
 @ComponentScan(basePackages = "nu.westlin.kartingtimes.services.web")
+@EnableFeignClients
 public class WebServer {
 
     /**

@@ -1,0 +1,36 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+<h1>All tracks</h1>
+
+<div th:if="not ${tracks}" class="error">
+    No tracks found
+    <div style="height: 2cm">&nbsp;</div>
+</div>
+
+<div th:if="${tracks}">
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Surname</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="track : ${tracks}">
+            <td th:text="${track.name}">firstName</td>
+            <td th:text="${track.location}">surname</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div th:replace="footer :: copy"></div>
+</body>
+</html>

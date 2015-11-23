@@ -1,63 +1,24 @@
 package nu.westlin.kartingtimes.services.web;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Repository;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.inject.Inject;
-import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Logger;
 
-@Repository
-public class DriverRepository {
+import static nu.westlin.kartingtimes.services.web.Services.DRIVERS_SERVICE;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-    protected Logger logger = Logger.getLogger(DriverRepository.class.getName());
+@FeignClient(DRIVERS_SERVICE)
+public interface DriverRepository {
 
-    private final String serviceUrl;
+    @RequestMapping(value = "/drivers", method = GET) List<Driver> getDrivers();
 
-    protected RestTemplate restTemplate;
+    @RequestMapping(value = "/drivers/firstName/{firstName}", method = GET) List<Driver> findByFirstName(@PathVariable("firstName") String firstName);
 
-    @Inject
-    public DriverRepository(RestTemplate restTemplate, @Value("${drivers.service.url}") String serviceUrl) {
-        this.restTemplate = restTemplate;
-        this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl
-            : "http://" + serviceUrl;
+    @RequestMapping(value = "/driver", method = GET) Driver getDriver();
 
-        this.logger.info("serviceUrl = " + serviceUrl);
-    }
+    @RequestMapping(value = "/driver/{id}", method = GET) Driver getDriver(@PathVariable("id") Long driverId);
 
-    public Driver getDriver(Long id) {
-        logger.info("Looking for: " + serviceUrl + "/drivers/{" + id + "}");
-        return restTemplate.getForObject(serviceUrl + "/drivers/{id}", Driver.class, id);
-    }
 
-    public Driver getDriver() {
-        logger.info("Looking for: " + serviceUrl + "/driver");
-        return restTemplate.getForObject(serviceUrl + "/driver", Driver.class);
-    }
-
-    public List<Driver> getDrivers() {
-        Driver[] drivers = null;
-
-        drivers = restTemplate.getForObject(serviceUrl + "/drivers", Driver[].class);
-
-        if (drivers != null && drivers.length > 0) {
-            return Arrays.asList(drivers);
-        } else {
-            return null;
-        }
-    }
-
-    public List<Driver> findByFirstName(String firstName) {
-        Driver[] drivers = null;
-
-        drivers = restTemplate.getForObject(serviceUrl + "/drivers/firstName/{firstName}", Driver[].class, firstName);
-
-        if (drivers != null && drivers.length > 0) {
-            return Arrays.asList(drivers);
-        } else {
-            return null;
-        }
-    }
 }

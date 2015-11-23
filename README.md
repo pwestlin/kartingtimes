@@ -11,7 +11,7 @@ What you need to build and run this application:
 * [Docker Compose](https://docs.docker.com/compose/) (not needed but it very useful and good fun)
 
 ## Design ##
-The application is built with six components:
+The application is built with five components:
 * Registration Server - binds together all microservices
 * Drivers Server microservice - handles drivers in its own database
 * Tracks Server microservice - handles tracks in its own database
