@@ -22,7 +22,7 @@ The application is built with five components:
 All microservices use json for exchanging data.
 
 ## Build and run using Docker ##
-_mvn install_
+_mvn install_  
 This builds the application and creates docker images for it.
 
 _cd docker_  
