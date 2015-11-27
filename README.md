@@ -25,8 +25,8 @@ All microservices use json for exchanging data.
 _mvn install_
 This builds the application and creates docker images for it.
 
-_cd docker_
-_docker-compose up_
+_cd docker_  
+_docker-compose up_  
 This runs all microservices.
 
 ### Build and run without Docker ###
